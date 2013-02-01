@@ -1,0 +1,2 @@
+module Rougemine::EnumerationsHelper
+end

@@ -1,0 +1,27 @@
+@splited_version = @infos.version.to_s.split('.')
+@splited_redmine_version = Redmine::VERSION.to_s.split('.')
+
+api.informations do
+  api.name            @infos.name
+  api.author          @infos.author
+  api.description     @infos.description
+
+  api.version do
+    api.major   @splited_version[0]
+    api.minor   @splited_version[1]
+    api.patch   @splited_version[2]
+    api.string  @infos.version
+  end
+
+  api.redmine do
+    api.version do
+      api.major  @splited_redmine_version[0]
+      api.minor  @splited_redmine_version[1]
+      api.patch  @splited_redmine_version[2]
+      api.string Redmine::VERSION.to_s
+    end
+  end
+
+  api.url             @infos.url
+  api.author_url      @infos.author_url
+end

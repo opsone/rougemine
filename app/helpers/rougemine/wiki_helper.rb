@@ -1,0 +1,2 @@
+module Rougemine::WikiHelper
+end

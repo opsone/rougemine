@@ -1,0 +1,2 @@
+module Rougemine::IndexHelper
+end

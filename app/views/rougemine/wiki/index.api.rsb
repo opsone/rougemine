@@ -1,0 +1,19 @@
+api.total_count @wikis ? @wikis.count : 0
+
+api.array :wikis do
+  if @wikis
+    @wikis.each do |wiki|
+      api.wiki do
+        api.id          wiki.id
+        api.title       wiki.title
+        api.parent_id   wiki.parent_id
+        # api.content     textilizable wiki.content_for_version(nil), :text
+
+        api.created_on  wiki.created_on
+        api.updated_on  wiki.updated_on
+      end
+    end
+  else
+    []
+  end
+end
